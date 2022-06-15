@@ -91,6 +91,13 @@ public class SDSREST_Client {
         
         HttpGet get_request;
         
+        // OPERAZIONE 7
+        System.out.println("+++ OPERAZIONE 7 +++");
+        get_request = new HttpGet(baseURI + "/progetti?from=1&to=3");
+        get_request.setHeader("Accept", "application/json");
+        execute_and_dump(get_request);
+        System.out.println();
+        
         // OPERAZIONE 10
         System.out.println("+++ OPERAZIONE 10 +++");
         get_request = new HttpGet(baseURI + "/progetti/2/tasks");
