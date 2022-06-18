@@ -98,6 +98,18 @@ public class SDSREST_Client {
         execute_and_dump(get_request);
         System.out.println();
         
+        // OPERAZIONE 8
+        System.out.println("+++ OPERAZIONE 8 +++");
+        HttpPost post_request_prog = new HttpPost(baseURI + "/progetti");
+        //per una richiesta POST, prepariamo anche il payload specificandone il tipo
+        
+        String jsonEntry8 = "\"coordinatore\": {\"nome\": \"string\",\"cognome\": \"string\",\"URL\": \"string\"},\"nome\": \"string\",\"descrizione\": \"string\"";
+        
+        HttpEntity payload_prog = new StringEntity(jsonEntry8, ContentType.APPLICATION_JSON);
+        //e lo inseriamo nella richiesta
+        post_request_prog.setEntity(payload_prog);
+        execute_and_dump(post_request_prog);
+        
         // OPERAZIONE 10
         System.out.println("+++ OPERAZIONE 10 +++");
         get_request = new HttpGet(baseURI + "/progetti/2/tasks");
